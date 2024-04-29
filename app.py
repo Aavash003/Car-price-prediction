@@ -37,7 +37,7 @@ y = data["price"]
 x_train,x_test,y_train,y_test = train_test_split(X,y,test_size=.1,random_state=100)
 
 
-rfr = RandomForestRegressor(n_estimators=60,max_depth=15,random_state=10)
+rfr = RandomForestRegressor(n_estimators=50,max_depth=15,random_state=100)
 rfr.fit(x_train,y_train)
 # print("Training score :",rfr.score(x_train,y_train))
 # print("Test score",rfr.score(x_test,y_test))
@@ -66,4 +66,4 @@ if st.button("submit"):
 	df
 	
 	car_price_prediction = rfr.predict(df)
-	st.write("Predicted car price : ",car_price_prediction)
+	st.write("Predicted car price : ",car_price_prediction[0])
